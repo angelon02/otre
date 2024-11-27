@@ -1,24 +1,11 @@
 module.exports = {
   version: 2,
   builds: [
-    {
-      src: "frontend/package.json",
-      use: "@vercel/static-build",
-      config: { distDir: "build" },
-    },
-    {
-      src: "backend/server.js",
-      use: "@vercel/node",
-    },
+    { src: 'frontend/package.json', use: '@vercel/static-build', config: { distDir: 'build' } },
+    { src: 'backend/server.js', use: '@vercel/node' }
   ],
   routes: [
-    {
-      src: "/api/(.*)",
-      dest: "/backend/server.js",
-    },
-    {
-      src: "/(.*)",
-      dest: "/frontend/$1",
-    },
-  ],
+    { src: '/api/(.*)', dest: '/backend/server.js' },
+    { src: '/(.*)', dest: '/frontend/$1' }
+  ]
 };
