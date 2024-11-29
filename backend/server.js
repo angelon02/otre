@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 // Configurare CORS
-const allowedOrigins = ['https://frontend.vercel.app'];
+const allowedOrigins = ['https://otre.vercel.app'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
