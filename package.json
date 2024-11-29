@@ -4,13 +4,13 @@
   "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:frontend": "npm --prefix frontend start",
-    "start:backend": "node backend/server.js",
-    "build:frontend": "npm --prefix frontend run build",
-    "build:backend": "npm --prefix backend run build", 
-    "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\""
-  },
+  "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+  "start:frontend": "npm --prefix frontend start",
+  "start:backend": "node backend/server.js",
+  "build:frontend": "npm --prefix frontend run build",
+  "build": "npm run build:frontend"
+}
+,
   "dependencies": {
     "concurrently": "^7.0.0"
   },
