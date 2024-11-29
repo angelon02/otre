@@ -1,26 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-
+const express = require("express");
 const app = express();
 
-// Configurare CORS
-const allowedOrigins = ['https://otre.vercel.app'];
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('CORS not allowed'));
-    }
-  }
-}));
+app.use(express.json());
 
-// Endpoint API di esempio
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Ciao dal backend!' });
+// Le tue rotte API
+app.get("/api/hello", (req, res) => {
+  res.json({ message: "Ciao dal backend!" });
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server in esecuzione sulla porta ${PORT}`);
-});
+// Esporta l'app come handler per le funzioni serverless
+module.exports = app;
