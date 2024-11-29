@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message] = useState('');
 
   useEffect(() => {
     fetch('/api/hello')  // Senza indicare http://localhost o URL specifici
