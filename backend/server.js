@@ -1,20 +1,22 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const mongoose = require('mongoose')
+const cors = require('cors')
 
-app.use(express.json());
+const app = express()
 
-// Le tue rotte API
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Ciao dal backend!" });
-});
+mongoose.connect("mongodb+srv://angelonetti990:<db_password>@cluster0.ikzrd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-// Avvia il server solo se non è importato come modulo
-if (require.main === module) {
-  const port = process.env.PORT || 3001;
-  app.listen(port, () => {
-    console.log(`Server avviato su http://localhost:${port}`);
-  });
-}
+const db = mongoose.connection
+db.once("open", () => {
+  console.log("Connesso al DB")
+  app.listen(3000, () => {
+    console.log("App in ascolto")
+  })
+})
 
-// Esporta l'app come handler per le funzioni serverless
-module.exports = app;
+const router = require('./routes/api')
+
+app.use(cors())
+app.use(express.json())
+
+app.use('/api', router)
