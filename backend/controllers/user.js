@@ -1,4 +1,4 @@
-const User = require('../models/users')
+const User = require('../models/user')
 
 module.exports = {
   
@@ -6,14 +6,17 @@ module.exports = {
     User.create({
       username: req.body.username,
       firstName: req.body.firstName,
-      lastName: req.body.lastName
+      lastName: req.body.lastName,
+      password: req.body.password,
+      ruolo: req.body.ruolo
     })
       .then(r => res.json(r))
   },
 
   loginUser: (req, res) => {
     User.findOne({
-      username: req.body.username
+      username: req.body.username,
+      password: req.body.password
     })
       .then(r => {
         if (r) res.json(r)

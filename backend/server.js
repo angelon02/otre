@@ -1,12 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+require('dotenv').config();
 
 const app = express()
 
-mongoose.connect("mongodb+srv://angelonetti990:<db_password>@cluster0.ikzrd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+const db_password = process.env.DB_PASSWORD;
+
+mongoose.connect("mongodb+srv://angelonetti990:"+db_password+"@cluster0.ikzrd.mongodb.net/")
 
 const db = mongoose.connection
+
 db.once("open", () => {
   console.log("Connesso al DB")
   app.listen(3000, () => {
