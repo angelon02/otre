@@ -6,7 +6,7 @@ export default function MainContent() {
   return (
     <Box className="main-container">
       <div className="header">
-        <Typography variant="h1" gutterBottom>
+        <Typography variant="h1" gutterBottom className='responsive-title'>
           Benvenuto in Otre
         </Typography>
         <Typography variant='h2'>Ecco cosa ti offriamo</Typography>
