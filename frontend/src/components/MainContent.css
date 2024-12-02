@@ -1,0 +1,98 @@
+/* MainContent.css */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ff0;
+    gap: 16px;
+    margin-top: 80px;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .search-form {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .search-icon {
+    color: #000;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .card.focused {
+    outline: 3px solid #1976d2;
+  }
+  
+  .card-image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .card-tag {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .author {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+  
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .author-avatar {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .author-name {
+    font-size: 0.875rem;
+  }
+  
+  .author-date {
+    font-size: 0.75rem;
+    color: #888;
+  }
+
