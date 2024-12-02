@@ -1,0 +1,47 @@
+/* AppAppBar.css */
+
+/* AppBar principale con sfondo viola e testo bianco */
+.appbar {
+    background-color: #9400d3 !important; /* Viola */
+    color: white; /* Colore del testo bianco */
+    box-shadow: none; /* Disabilita ombre */
+  }
+  
+  /* Toolbar con stile personalizzato */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-radius: 8px;
+    backdrop-filter: blur(24px);
+    padding: 8px 12px;
+  }
+  
+  /* Stile per il contenitore (Container) */
+  .appbar .MuiContainer-root {
+    max-width: 1200px; /* Imposta la larghezza massima */
+  }
+  
+  /* Stile per i bottoni */
+  .appbar .MuiButton-root {
+    font-size: 14px;
+    padding: 6px 16px;
+  }
+  
+  /* Cambia il colore del testo dei bottoni */
+  .appbar .MuiButton-text {
+    color: white;
+  }
+  
+  /* Modifica lo stile del menu mobile */
+  .appbar .MuiDrawer-paper {
+    background-color: #8128c8; /* Viola */
+    color: white; /* Colore bianco per il testo */
+  }
+  
+  .appbar .MuiMenuItem-root {
+    color: white; /* Colore bianco per i menu items */
+  }
+  
+  
