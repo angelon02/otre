@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import AppAppBar from './components/AppAppBar';
+import Footer from './components/Footer';
+import Latest from './components/Latest';
+import Main from './components/MainContent'
+import Sitemark from './components/SitemarkIcon';
+
 
 function App() {
-  const [message] = useState('');
-
-  useEffect(() => {
-    fetch('/api/hello')  // Senza indicare http://localhost o URL specifici
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error('Errore:', error));
-  }, []);
-
   return (
     <div>
-      <h1>Frontend React</h1>
-      <p>{message}</p>
+      <AppAppBar />
+      <Footer />
+      <Latest />
+      <Main />
+      <Sitemark />
     </div>
   );
 }
 
 export default App;
-
